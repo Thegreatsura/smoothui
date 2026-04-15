@@ -1,6 +1,7 @@
 "use client";
 
 import Divider from "@docs/components/landing/divider";
+import { SectionHeader } from "@docs/components/landing/section-header";
 import { ArrowRight } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
@@ -27,7 +28,7 @@ function McpIllustration() {
           <span className="text-foreground/60 text-sm">AI Agent</span>
         </motion.div>
         <motion.div
-          className="w-fit rounded-2xl rounded-tl border border-transparent bg-primary/60 p-2.5 text-foreground/70 text-xs shadow shadow-black/10 ring-1 ring-border"
+          className="w-fit rounded-2xl rounded-tl border border-border bg-background p-2.5 text-foreground/70 text-xs"
           initial={
             shouldReduceMotion
               ? { opacity: 1 }
@@ -45,7 +46,7 @@ function McpIllustration() {
           smoothui
         </motion.div>
         <motion.div
-          className="ml-auto w-fit rounded-2xl rounded-tr border border-transparent bg-brand/10 p-2.5 text-foreground/70 text-xs shadow shadow-black/10 ring-1 ring-brand/20"
+          className="ml-auto w-fit rounded-2xl rounded-tr border border-brand/20 bg-brand/10 p-2.5 text-foreground/70 text-xs"
           initial={
             shouldReduceMotion
               ? { opacity: 1 }
@@ -79,7 +80,7 @@ function ApiIllustration() {
   return (
     <div aria-hidden className="self-center">
       <motion.div
-        className="space-y-2.5 rounded-2xl border border-transparent bg-primary/60 p-4 shadow shadow-black/10 ring-1 ring-border"
+        className="space-y-2.5 rounded-2xl border border-border bg-background p-4"
         initial={
           shouldReduceMotion
             ? { opacity: 1 }
@@ -195,7 +196,7 @@ function LlmsIllustration() {
           </div>
         </motion.div>
         <motion.div
-          className="-mx-5 flex rounded-xl border border-transparent bg-primary/60 py-1 pr-4 pl-2 text-xs shadow shadow-black/10 ring-1 ring-border"
+          className="-mx-5 flex rounded-xl border border-border bg-background py-1 pr-4 pl-2 text-xs"
           initial={
             shouldReduceMotion
               ? { opacity: 1 }
@@ -271,65 +272,14 @@ export function AISection() {
     <section className="relative bg-background px-8 py-24 transition">
       <Divider />
       <div className="mx-auto max-w-5xl">
-        <motion.p
-          className="mb-2 text-center font-medium text-brand text-sm uppercase tracking-wider"
-          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0 }}
-          transition={
-            shouldReduceMotion
-              ? { duration: 0 }
-              : { type: "spring", duration: 0.3, bounce: 0.1 }
-          }
-          viewport={{ once: true, amount: 0.5 }}
-          whileInView={shouldReduceMotion ? { opacity: 1 } : { opacity: 1 }}
-        >
-          AI-Native
-        </motion.p>
-        <motion.h2
-          className="text-balance text-center font-semibold font-title text-3xl text-foreground transition"
-          initial={
-            shouldReduceMotion
-              ? { opacity: 1 }
-              : { opacity: 0, transform: "translateY(10px)" }
-          }
-          transition={
-            shouldReduceMotion
-              ? { duration: 0 }
-              : { type: "spring", duration: 0.3, bounce: 0.1, delay: 0.05 }
-          }
-          viewport={{ once: true, amount: 0.5 }}
-          whileInView={
-            shouldReduceMotion
-              ? { opacity: 1 }
-              : { opacity: 1, transform: "translateY(0px)" }
-          }
-        >
-          Built for AI-Assisted Development
-        </motion.h2>
-        <motion.p
-          className="mx-auto mt-4 max-w-2xl text-balance text-center text-primary-foreground transition"
-          initial={
-            shouldReduceMotion
-              ? { opacity: 1 }
-              : { opacity: 0, transform: "translateY(10px)" }
-          }
-          transition={
-            shouldReduceMotion
-              ? { duration: 0 }
-              : { type: "spring", duration: 0.3, bounce: 0.1, delay: 0.1 }
-          }
-          viewport={{ once: true, amount: 0.5 }}
-          whileInView={
-            shouldReduceMotion
-              ? { opacity: 1 }
-              : { opacity: 1, transform: "translateY(0px)" }
-          }
-        >
-          The first component library designed for AI agents. Discover, search,
-          and install components programmatically.
-        </motion.p>
+        <SectionHeader
+          description="The first component library designed for AI agents. Discover, search, and install components programmatically."
+          eyebrow="AI-Native"
+          title="Built for AI-Assisted Development"
+        />
 
         <motion.div
-          className="mx-auto mt-16 overflow-hidden rounded-2xl border border-transparent bg-primary/20 shadow-black/5 shadow-md ring-1 ring-border"
+          className="relative mx-auto mt-16 grid divide-y overflow-hidden rounded-2xl border border-transparent bg-card/50 shadow-black/5 shadow-md ring-1 ring-border md:grid-cols-3 md:divide-x md:divide-y-0"
           initial={
             shouldReduceMotion
               ? { opacity: 1 }
@@ -347,39 +297,35 @@ export function AISection() {
               : { opacity: 1, transform: "translateY(0px) scale(1)" }
           }
         >
-          <div className="grid divide-y md:grid-cols-3 md:divide-x md:divide-y-0">
-            {aiFeatures.map((feature, index) => (
-              <motion.div
-                className="row-span-2 grid grid-rows-subgrid gap-8 p-8"
-                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0 }}
-                key={feature.label}
-                transition={
-                  shouldReduceMotion
-                    ? { duration: 0 }
-                    : {
-                        type: "spring",
-                        duration: 0.25,
-                        bounce: 0.1,
-                        delay: 0.25 + index * 0.1,
-                      }
-                }
-                viewport={{ once: true, amount: 0.2 }}
-                whileInView={
-                  shouldReduceMotion ? { opacity: 1 } : { opacity: 1 }
-                }
-              >
-                <feature.illustration />
-                <div className="relative z-10 mx-auto max-w-sm text-center">
-                  <h3 className="text-balance font-semibold text-foreground">
-                    {feature.title}
-                  </h3>
-                  <p className="mt-3 text-balance text-primary-foreground text-sm">
-                    {feature.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          {aiFeatures.map((feature, index) => (
+            <motion.div
+              className="row-span-2 grid grid-rows-subgrid gap-8 p-8"
+              initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0 }}
+              key={feature.label}
+              transition={
+                shouldReduceMotion
+                  ? { duration: 0 }
+                  : {
+                      type: "spring",
+                      duration: 0.25,
+                      bounce: 0.1,
+                      delay: 0.25 + index * 0.1,
+                    }
+              }
+              viewport={{ once: true, amount: 0.2 }}
+              whileInView={shouldReduceMotion ? { opacity: 1 } : { opacity: 1 }}
+            >
+              <feature.illustration />
+              <div className="relative z-10 mx-auto max-w-sm text-center">
+                <h3 className="text-balance font-semibold text-foreground">
+                  {feature.title}
+                </h3>
+                <p className="mt-3 text-balance text-primary-foreground text-sm">
+                  {feature.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
 
         <motion.div
