@@ -180,13 +180,14 @@ export function FormField({ name, className, children }: FormFieldProps) {
   }
 
   // Reset counter on unmount of the first field (index 0)
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       if (fieldIndexRef.current === 0) {
         fieldCounter = 0;
       }
-    };
-  }, []);
+    },
+    []
+  );
 
   const ctxValue = useMemo(
     () => ({

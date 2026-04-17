@@ -48,13 +48,14 @@ export const FilterBar = ({
   );
 
   // Cleanup debounce on unmount
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       if (debounceRef.current) {
         clearTimeout(debounceRef.current);
       }
-    };
-  }, []);
+    },
+    []
+  );
 
   const clearSearch = useCallback(() => {
     setLocalSearch("");

@@ -125,13 +125,14 @@ export default function Combobox({
   }, [open, onSearch, asyncOptions.length, loading]);
 
   // Clean up debounce on unmount
-  useEffect(() => {
-    return () => {
+  useEffect(
+    () => () => {
       if (debounceRef.current) {
         clearTimeout(debounceRef.current);
       }
-    };
-  }, []);
+    },
+    []
+  );
 
   const handleSelect = (selectedValue: string) => {
     const newValue = selectedValue === value ? "" : selectedValue;

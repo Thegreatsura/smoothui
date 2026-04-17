@@ -13,9 +13,7 @@ export const transformImports = (content: string, alias: string): string => {
   return content.replace(/@\/components\//g, `${alias}/components/`);
 };
 
-export const fileExists = (filePath: string): boolean => {
-  return existsSync(filePath);
-};
+export const fileExists = (filePath: string): boolean => existsSync(filePath);
 
 export const writeComponent = async (
   item: RegistryItem,

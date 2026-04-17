@@ -3,7 +3,8 @@
 import { Slot } from "@radix-ui/react-slot";
 import { cn } from "@repo/shadcn-ui/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
-import { type ButtonHTMLAttributes, forwardRef } from "react";
+import type React from "react";
+import type { ButtonHTMLAttributes } from "react";
 
 const smoothButtonVariants = cva(
   "inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium text-sm ring-offset-background transition-transform duration-150 ease-out focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-[0.97] disabled:pointer-events-none disabled:opacity-50",
@@ -40,21 +41,26 @@ const smoothButtonVariants = cva(
 export type SmoothButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   VariantProps<typeof smoothButtonVariants> & {
     asChild?: boolean;
+    ref?: React.Ref<HTMLButtonElement>;
   };
 
-const SmoothButton = forwardRef<HTMLButtonElement, SmoothButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button";
-    return (
-      <Comp
-        className={cn(smoothButtonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
-    );
-  }
-);
-SmoothButton.displayName = "SmoothButton";
+function SmoothButton({
+  className,
+  variant,
+  size,
+  asChild = false,
+  ref,
+  ...props
+}: SmoothButtonProps) {
+  const Comp = asChild ? Slot : "button";
+  return (
+    <Comp
+      className={cn(smoothButtonVariants({ variant, size, className }))}
+      ref={ref}
+      {...props}
+    />
+  );
+}
 
 export default SmoothButton;
 export { smoothButtonVariants };

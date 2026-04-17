@@ -16,9 +16,8 @@ const manifest = bundleSizeManifest as BundleSizeManifest;
  * Get the bundle size for a specific component by its slug (kebab-case name).
  * Returns null if the component is not found in the manifest.
  */
-export const getBundleSize = (slug: string): BundleSizeEntry | null => {
-  return manifest.components?.[slug] ?? null;
-};
+export const getBundleSize = (slug: string): BundleSizeEntry | null =>
+  manifest.components?.[slug] ?? null;
 
 /**
  * Format a byte count into a human-readable string.

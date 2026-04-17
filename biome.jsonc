@@ -79,6 +79,8 @@
       "style": {
         // Allow nested ternaries for concise conditional logic
         "noNestedTernary": "warn",
+        // Allow explicit return in arrow functions for readability
+        "useConsistentArrowReturn": "warn",
         // Prefer `type` but don't block on pre-existing interfaces
         "useConsistentTypeDefinitions": "warn",
         // Re-exporting imports is common in barrel files

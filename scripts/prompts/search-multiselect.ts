@@ -62,9 +62,8 @@ export const searchMultiselect = (
       );
     };
 
-    const getFiltered = (): SearchItem[] => {
-      return items.filter((item) => filter(item, query));
-    };
+    const getFiltered = (): SearchItem[] =>
+      items.filter((item) => filter(item, query));
 
     const clearRender = (): void => {
       if (lastRenderHeight > 0) {
