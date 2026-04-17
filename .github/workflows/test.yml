@@ -76,3 +76,6 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+      - name: Verify CLI
+        run: pnpm exec tsup && node dist/index.js list --json

@@ -18,6 +18,9 @@ export default defineConfig({
     setupFiles: ["./test-utils/setup.ts"],
     include: ["components/**/__tests__/**/*.test.{ts,tsx}"],
     globals: true,
+    // input-otp and motion access window after jsdom teardown — suppress
+    // the unhandled ReferenceError so the test run exits cleanly.
+    dangerouslyIgnoreUnhandledErrors: true,
   },
   resolve: {
     dedupe: ["react", "react-dom"],
