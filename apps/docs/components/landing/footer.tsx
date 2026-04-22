@@ -12,6 +12,7 @@ import { cn } from "@repo/shadcn-ui/lib/utils";
 import { ArrowUpRight, Heart } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
+import smoothuiPkg from "../../../../packages/smoothui/package.json";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -277,11 +278,14 @@ function LinkColumn({ column }: { column: FooterColumn }) {
 const ENTER_EASE = [0.23, 1, 0.32, 1] as const;
 
 interface FooterProps {
-  componentCount: number;
-  version: string;
+  componentCount?: number;
+  version?: string;
 }
 
-export default function Footer({ componentCount, version }: FooterProps) {
+export default function Footer({
+  componentCount,
+  version = smoothuiPkg.version,
+}: FooterProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return (
@@ -409,8 +413,12 @@ export default function Footer({ componentCount, version }: FooterProps) {
                 </span>
                 <span className="text-foreground text-xs">
                   v{version}
-                  <span className="text-muted-foreground"> · </span>
-                  {componentCount} components
+                  {componentCount !== undefined && (
+                    <>
+                      <span className="text-muted-foreground"> · </span>
+                      {componentCount} components
+                    </>
+                  )}
                 </span>
               </div>
             </div>
