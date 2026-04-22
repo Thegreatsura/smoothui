@@ -1,4 +1,4 @@
-import rootPkg from "../../../package.json";
+import smoothuiPkg from "../../../packages/smoothui/package.json";
 import { source } from "./source";
 
 export interface SmoothuiStats {
@@ -17,6 +17,6 @@ export function getSmoothuiStats(): SmoothuiStats {
 
   return {
     componentCount,
-    version: rootPkg.version,
+    version: smoothuiPkg.version,
   };
 }
