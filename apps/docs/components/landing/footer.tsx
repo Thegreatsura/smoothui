@@ -57,7 +57,7 @@ const developColumn: FooterColumn = {
 };
 
 const connectColumn: FooterColumn = {
-  title: "By Eduardo",
+  title: "By the maker",
   links: [
     { label: "sparkbites.dev", href: "https://sparkbites.dev", external: true },
     { label: "codevator.dev", href: "https://codevator.dev", external: true },
