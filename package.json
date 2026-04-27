@@ -104,7 +104,7 @@
       "biome check --write"
     ],
     "*.{json,css,md,mdx}": [
-      "biome format --write"
+      "biome format --write --no-errors-on-unmatched"
     ]
   },
   "dependencies": {
