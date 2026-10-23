@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.3.0](https://github.com/Thegreatsura/smoothui/compare/cli-v1.2.0...cli-v1.3.0) (2026-10-23)
+
+
+### Features
+
+* add primitives catalog and smoothui-utils foundation ([723e26f](https://github.com/Thegreatsura/smoothui/commit/723e26f1c3b2f5a04e0dfe0626de1a47f571db0d))
+* add primitives catalog and smoothui-utils foundation ([510d38d](https://github.com/Thegreatsura/smoothui/commit/510d38d58cd826e81393f62d731e79982c0c3e5b))
+* refresh landing, media library and platform changelog ([2acdfa1](https://github.com/Thegreatsura/smoothui/commit/2acdfa17726dcddbb75cea5dcd2af70546c7809f))
+* ship primitives catalog and collapse Basic UI into Patterns ([3cbbe9c](https://github.com/Thegreatsura/smoothui/commit/3cbbe9c7694d4bd902df681aad5645fd37b3515a))
+
+
+### Bug Fixes
+
+* patch dependencies and reduced-motion stack navigation ([520c127](https://github.com/Thegreatsura/smoothui/commit/520c12723ee263d41fcd2c8efd26fe4eed1c9a49))
+* **release:** isolate CLI package ([9e6813a](https://github.com/Thegreatsura/smoothui/commit/9e6813a395736aeeb9317f092fcb2ea6bdcdc067))
+* **release:** isolate CLI package ([5d722bc](https://github.com/Thegreatsura/smoothui/commit/5d722bc0e392d7df34afc18833bb939a5bfb57a3))
+
+
+### Documentation
+
+* **release:** deduplicate CLI changelog ([aebb25c](https://github.com/Thegreatsura/smoothui/commit/aebb25ce13c761ba9b442817b8b86aea6bb660df))
+
 ## [1.2.0](https://github.com/educlopez/smoothui/compare/cli-v1.1.3...cli-v1.2.0) (2026-10-15)
 
 
